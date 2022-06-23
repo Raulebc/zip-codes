@@ -13,7 +13,7 @@ class Handler extends ExceptionHandler
      * @var array<int, class-string<Throwable>>
      */
     protected $dontReport = [
-        //
+        \Illuminate\Database\Eloquent\ModelNotFoundException::class,
     ];
 
     /**
@@ -37,5 +37,27 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+    }
+
+    /**
+     *  We use the parent render as always,
+     *  but we add a custom message on the following ones:
+     *  - 404
+     *
+     *  @param  Request    $request
+     *  @param  Throwable  $exception
+     *
+     *  @return  void
+     */
+    public function render($request, Throwable $exception)
+    {
+        if ($exception instanceof \Illuminate\Database\Eloquent\ModelNotFoundException) {
+            return response()->json([
+                'code'    => 404,
+                'message' => "Requested resource not found."
+            ], 404);
+        }
+
+        return parent::render($request, $exception);
     }
 }

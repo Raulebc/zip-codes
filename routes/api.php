@@ -19,4 +19,4 @@ use App\Http\Controllers\ZipCodeController;
 //     return $request->user();
 // });
 
-Route::get('/zip-codes/{zip_code}', [ZipCodeController::class, 'show']);
+Route::get('/zip-codes/{zip_code}', [ZipCodeController::class, 'show'])->name('zip-codes.show');
