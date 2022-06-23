@@ -20,8 +20,8 @@ class ZipCodeControllerTest extends TestCase
         $this->getJson("/api/zip-codes/{$zip_code->id}")
                 ->assertStatus(200)
                 ->assertExactJson([
-                    'zip_code'       => $zip_code->zip_code,
-                    'locality'       => $zip_code->city,
+                    'zip_code'       => (string) $zip_code->id,
+                    'locality'       => $zip_code->locality,
                     'federal_entity' => $zip_code->federal_entity,
                     'settlements'    => $zip_code->settlements,
                     'municipality'   => $zip_code->municipality,
