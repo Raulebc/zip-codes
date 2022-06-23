@@ -13,7 +13,7 @@ class ZipCodeImportController extends Controller
      *
      *  @var  string
      */
-    private $path = 'storage/app/imports/zip_codes.csv';
+    private $path = 'database/imports/zip_codes.csv';
 
     /**
      *  Import zip codes.
