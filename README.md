@@ -7,7 +7,7 @@ Zip Codes API is a simple API that allows you to search for a zip code and gets 
 ## How to consume it
 
 To search for a zip code, you need to send a GET request to the following URL:
-[{{ url('/api/zip_codes/01000') }}]({{ url('/api/zip_codes/01000') }})
+[https://agile-brushlands-20346.herokuapp.com/01000](https://agile-brushlands-20346.herokuapp.com/01000)
 
 The request must contain a query parameter called <code>zip_code</code> with the zip code you want to search.
 
