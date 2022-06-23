@@ -1,0 +1,23 @@
+{
+    "zip_code": "50000",
+    "locality": "d_ciudad",
+    "federal_entity": {
+        "key": "c_estado",
+        "name": "d_estado",
+        "code": null
+    },
+    "settlements": [
+        {
+            "key": "c_municipio",
+            "name": "d_asenta",
+            "zone_type": "d_zona",
+            "settlement_type": {
+                "name": "d_tipo_asenta"
+            }
+        }
+    ],
+    "municipality": {
+        "key": "c_municipio",
+        "name": "d_estado"
+}
+}
